@@ -39,7 +39,7 @@ function Student(name, cohort) {
     this.cohort = cohort;
     this.greeting = "Good morning";
     this.speak = function() {
-        console.log(`${this.greeting}. My name is ${name} and I am in ${this.cohort}`)
+        console.log(`${this.greeting}. My name is ${this.name} and I am in ${this.cohort}`)
     }
 }
 
@@ -47,9 +47,14 @@ const megan = new Student('Megan', 'web17');
 
 console.log(megan);
 
-megan.speak();
+megan.speak(); 
+
+const john = new Student('John', 'web15');
 
 
 // Principle 4
 
 // code example for Explicit Binding
+
+megan.speak.call(john);
+
