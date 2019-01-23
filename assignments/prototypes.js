@@ -146,3 +146,57 @@ Humanoid.prototype.greet = function () {
   // * Create Villain and Hero constructor functions that inherit from the Humanoid constructor function.  
   // * Give the Hero and Villains different methods that could be used to remove health points from objects which could result in destruction if health gets to 0 or drops below 0;
   // * Create two new objects, one a villain and one a hero and fight it out with methods!
+
+
+  function Villain (attributes) {
+    this.evilName = attributes.evilName;
+    this.nickName = attributes.nickName;
+    Humanoid.call(this, attributes);
+    this.avadaKedavra = function (victim) {
+      if (victim.healthPoints > 0) {
+        victim.healthPoints -= 1; 
+        console.log(`${victim.name} now has ${victim.healthPoints} health points`)
+      } if (victim.healthPoints === 0) {
+        victim.destroy();
+      } else {
+        console.log(`The spell didn't work! ${victim.name} is still alive!`);
+      }
+    }
+  };
+
+  const voldemort = new Villain({
+    name: 'Tom Riddle',
+    evilName: 'Voldemort',
+    nickName: 'He who must not be named',
+    healthPoints: 100,
+    language: ['Parseltongue', 'English'],
+    weapons: ['wand'] 
+  });
+
+  console.log(voldemort);
+
+  function Hero (attributes) {
+    Humanoid.call(this, attributes);
+    this.goodName = attributes.goodName;
+    this.nickName = attributes.nickName;
+    this.expelliarmus = function (subject) {
+        console.log(`${subject.evilName} drops his ${subject.weapons}!`);
+    };
+  } 
+
+  const harry = new Hero({
+    name: 'Harry Potter', 
+    goodName: 'Harry', 
+    nickName: 'the Chosen One', 
+    healthPoints: 100, 
+    team: 'Griffindor',
+    language: ['Parseltongue', 'English'],
+    weapons: ['wand'], 
+  })
+
+  console.log(harry); 
+
+
+  voldemort.avadaKedavra(harry);
+
+  harry.expelliarmus(voldemort);
