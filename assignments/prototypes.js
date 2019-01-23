@@ -21,9 +21,13 @@ this.dimensions = function Dimensions (dimensions) {
   this.length = dimensions.length;
   this.width = dimensions.width;
   this.height = dimensions.height;
-};
+  }
+  this.destroy = function () {
+    console.log(`${this.name} was removed from the game`);
+    }
 };
 
+/*
 GameObject.prototype.destroy = function() {
   console.log('${this.name} was removed from the game.');
 }
@@ -42,7 +46,7 @@ function CharacterStats (attributes) {
 };
 
 CharacterStats.prototype.takeDamage = function() {
-  console.log(`${this.healthPointsname} took damage`);
+  console.log(`${this.name} took damage`);
 }
 
 /*
