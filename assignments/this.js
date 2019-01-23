@@ -13,9 +13,22 @@
 
 // code example for Window Binding
 
+console.log(this); //just prints out the window object in the console.
+
 // Principle 2
 
 // code example for Implicit Binding
+
+const implicitBindingExample = {
+    name: "implicit binding", 
+    lambdaLesson: "Javascript III",
+    dayOfWeek: "Wednesday",
+    speak: function() {
+        console.log(`We learned about ${this.name} in ${this.lambdaLesson} on ${this.dayOfWeek}`)
+    }
+}
+
+implicitBindingExample.speak();
 
 // Principle 3
 
