@@ -17,11 +17,7 @@
 
 function GameObject (properties) {
 this.createdAt = properties.createdAt;
-this.dimensions = function Dimensions (dimensions) {
-  this.length = dimensions.length;
-  this.width = dimensions.width;
-  this.height = dimensions.height;
-  }
+this.dimensions = properties.dimensions;
   this.destroy = function () {
     console.log(`${this.name} was removed from the game`);
     }
