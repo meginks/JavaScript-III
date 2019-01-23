@@ -159,7 +159,7 @@ Humanoid.prototype.greet = function () {
       } if (victim.healthPoints === 0) {
         victim.destroy();
       } else {
-        console.log(`The spell didn't work! ${victim.name} is still alive!`);
+        console.log(`The spell didn't work! ${victim.name} is still alive, but wounded!`);
       }
     }
   };
