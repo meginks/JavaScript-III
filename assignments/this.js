@@ -34,6 +34,22 @@ implicitBindingExample.speak();
 
 // code example for New Binding
 
+function Student(name, cohort) {
+    this.name = name;
+    this.cohort = cohort;
+    this.greeting = "Good morning";
+    this.speak = function() {
+        console.log(`${this.greeting}. My name is ${name} and I am in ${this.cohort}`)
+    }
+}
+
+const megan = new Student('Megan', 'web17');
+
+console.log(megan);
+
+megan.speak();
+
+
 // Principle 4
 
 // code example for Explicit Binding
